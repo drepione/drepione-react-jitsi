@@ -1,6 +1,6 @@
 {
   "name": "drepione-react-jitsi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A jitsi meet component & hook moulded with react's chakra",
   "author": "Masihur Maruf",
   "license": "MIT",
