@@ -22,6 +22,7 @@ const App = () => {
         password={password}
         displayName={name}
         onMeetingEnd={() => console.log('Meeting has ended')}
+        onParticipantJoined={(e) => console.log('On Join Meetting: ', e)}
         loadingComponent={<p>ʕ •ᴥ•ʔ jitsi is loading ...</p>} />)
         : (
           <form>

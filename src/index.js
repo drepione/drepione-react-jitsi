@@ -37,7 +37,7 @@ const Jitsi = (props) => {
         }
       })
       if (onMeetingEnd) jitsi.addEventListener('readyToClose', onMeetingEnd)
-      if (onParticipantJoined) jitsi.addEventListener('participantJoined', onParticipantJoined)
+      if (onParticipantJoined) jitsi.addEventListener('participantJoined', () => onParticipantJoined)
     }
 
     return () => jitsi && jitsi.dispose()
