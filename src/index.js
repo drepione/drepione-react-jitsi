@@ -1,46 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import useJitsi from './useJitsi'
+import useJitsi from './useJitsi';
 
 const Jutsu = (props) => {
-  const { domain, roomName, displayName, password, jwt = null, subject } = props
-  const { loadingComponent, containerStyles, jitsiContainerStyles, onMeetingEnd } = props
+  const { domain, roomName, displayName, password, jwt = null, subject } = props;
+  const { loadingComponent, containerStyles, jitsiContainerStyles, onMeetingEnd, onParticipantJoined } = props;
 
-  const [loading, setLoading] = useState(true)
-  const jitsi = useJitsi({ roomName, parentNode: 'jitsi-container', jwt: jwt }, domain)
+  const [loading, setLoading] = useState(true);
+  const jitsi = useJitsi({ roomName, parentNode: 'jitsi-container', jwt: jwt }, domain);
 
   const containerStyle = {
     width: '800px',
     height: '400px'
-  }
+  };
 
   const jitsiContainerStyle = {
     display: loading ? 'none' : 'block',
     width: '100%',
     height: '100%'
-  }
+  };
 
   useEffect(() => {
     if (jitsi) {
-      setLoading(false)
-      jitsi.executeCommand('subject', subject)
+      setLoading(false);
+      jitsi.executeCommand('subject', subject);
 
       jitsi.addEventListener('videoConferenceJoined', () => {
-        if (password) jitsi.executeCommand('password', password)
+        if (password) jitsi.executeCommand('password', password);
         jitsi.executeCommand('displayName', displayName)
-      })
+      });
 
       jitsi.addEventListener('passwordRequired', () => {
         if (password) {
           jitsi.executeCommand('password', password)
         }
-      })
-      if (onMeetingEnd) jitsi.addEventListener('readyToClose', onMeetingEnd)
+      });
+      if (onMeetingEnd) jitsi.addEventListener('readyToClose', onMeetingEnd);
+      if (onParticipantJoined) jitsi.addEventListener('participantJoined', onParticipantJoined);
     }
 
     return () => jitsi && jitsi.dispose()
-  }, [jitsi])
+  }, [jitsi]);
 
   return (
     <div style={{ ...containerStyle, ...containerStyles }}>
@@ -51,7 +52,7 @@ const Jutsu = (props) => {
       />
     </div>
   )
-}
+};
 
 Jutsu.propTypes = {
   jwt: PropTypes.string,
@@ -61,9 +62,10 @@ Jutsu.propTypes = {
   roomName: PropTypes.string.isRequired,
   displayName: PropTypes.string,
   onMeetingEnd: PropTypes.func,
+  onParticipantJoined: PropTypes.func,
   loadingComponent: PropTypes.object,
   containerStyles: PropTypes.object,
   jitsiContainerStyles: PropTypes.object
-}
+};
 
-export { Jutsu, useJitsi }
+export { Jutsu, useJitsi };

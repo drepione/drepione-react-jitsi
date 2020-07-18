@@ -4,13 +4,12 @@
   "description": "A jitsi meet component & hook moulded with react's chakra",
   "author": "Filipe Herculano",
   "license": "MIT",
-  "homepage": "https://this-fifo.github.io/jutsu/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/this-fifo/jutsu.git"
+    "url": "https://github.com/drepione/jutsu.git"
   },
   "bugs": {
-    "url": "https://github.com/this-fifo/jutsu/issues"
+    "url": "https://github.com/drepione/jutsu/issues"
   },
   "keywords": [
     "jitsi",
