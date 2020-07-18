@@ -1,14 +1,12 @@
 # &lt;Jutsu /&gt;
 > A jitsi meet component wrapper and custom hook moulded with react's chakra 💠
 
-[View live demo](https://this-fifo.github.io/jutsu/)
-
-[![NPM](https://img.shields.io/npm/v/react-jutsu.svg)](https://www.npmjs.com/package/react-jutsu)
+[![NPM](https://img.shields.io/npm/v/drepione-react-jitsi.svg)](https://www.npmjs.com/package/drepione-react-jutsu)
 
 ## Install
 
 ```bash
-yarn add react-jutsu
+yarn add drepione-react-jitsi
 ```
 
 ## Add the Jitsi Meet API js file to the html body
@@ -74,6 +72,7 @@ const App = () => {
       displayName={name}
       password={password}
       onMeetingEnd={() => console.log('Meeting has ended')}
+      onParticipantJoined={() => console.log('Participant has Joined')}
       loadingComponent={<p>loading ...</p>} />
   ) : (
     <form>
@@ -91,7 +90,7 @@ export default App
 ```
 
 ## Supported Configuration
-> Check the [Jitsi Meet API docs](https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md#api--new-jitsimeetexternalapidomain-options) for full configuration and how to use api commands when using the `useJitsi` hook
+> Check the [Jitsi Meet API docs](https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe) for full configuration and how to use api commands when using the `useJitsi` hook
 
 ### Room Name
 The meeting room name
@@ -109,6 +108,10 @@ The meeting room password
 Callback function executed after readyToClose event is fired
 >This prop is optional
 
+### participantJoined
+Callback function executed after readyToClose event is fired
+ >This prop is optional
+
 ### Subject
 The meeting subject (what is displayed at the top)
 >This prop is optional
@@ -120,6 +123,7 @@ The meeting subject (what is displayed at the top)
   password='dattebayo'
   displayName='uzumaki'
   onMeetingEnd={() => console.log('Meeting has ended')}
+  onParticipantJoined={() => console.log('Participant has Joined')}
 />
 ```
 
@@ -169,4 +173,4 @@ An example override could be
 
 ## License
 
-MIT © [this-fifo](https://github.com/this-fifo)
+MIT © [drepione](https://github.com/drepione)

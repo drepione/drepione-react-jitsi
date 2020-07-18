@@ -6,17 +6,17 @@ const useJitsi = (options, domain = 'meet.jit.si') => {
 
   useEffect(() => {
     if (window.JitsiMeetExternalAPI) {
-      options.parentNode = document.getElementById(options.parentNode);
+      options.parentNode = document.getElementById(options.parentNode)
       // eslint-disable-next-line no-undef
       setJitsi(new JitsiMeetExternalAPI(domain, options))
     } else {
       setJitsi({ error: 'JitsiMeetExternalAPI is not available, check if https://meet.jit.si/external_api.js was loaded' })
     }
     return () => jitsi && jitsi.dispose()
-  }, []);
+  }, [])
 
   return jitsi
-};
+}
 
 useJitsi.propTypes = {
   options: PropTypes.shape({
@@ -34,6 +34,6 @@ useJitsi.propTypes = {
     userInfo: PropTypes.object
   }),
   domain: PropTypes.string
-};
+}
 
 export default useJitsi
