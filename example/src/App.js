@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Jutsu } from 'react-jutsu'
+import { Jitsi } from 'drepione-react-jitsi'
 
 const App = () => {
   const [room, setRoom] = useState('')
@@ -17,7 +17,7 @@ const App = () => {
     <div>
       <h2>&lt;Jutsu /&gt; Demo !</h2>
       <blockquote>View the <a href='https://github.com/this-fifo/jutsu'>source</a> for Jutsu and check <a href='https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md'>jitsi-meet</a> for the Jitsi Meet API</blockquote>
-      {call ? (<Jutsu
+      {call ? (<Jitsi
         roomName={room}
         password={password}
         displayName={name}

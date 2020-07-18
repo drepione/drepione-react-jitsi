@@ -1,4 +1,4 @@
-# &lt;Jutsu /&gt;
+# drepione-react-jitsi
 > A jitsi meet component wrapper and custom hook moulded with react's chakra 💠
 
 [![NPM](https://img.shields.io/npm/v/drepione-react-jitsi.svg)](https://www.npmjs.com/package/drepione-react-jutsu)

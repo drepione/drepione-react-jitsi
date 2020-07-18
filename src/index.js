@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import useJitsi from './useJitsi'
 
-const Jutsu = (props) => {
+const Jitsi = (props) => {
   const { domain, roomName, displayName, password, jwt = null, subject } = props
   const { loadingComponent, containerStyles, jitsiContainerStyles, onMeetingEnd, onParticipantJoined } = props
 
@@ -54,7 +54,7 @@ const Jutsu = (props) => {
   )
 }
 
-Jutsu.propTypes = {
+Jitsi.propTypes = {
   jwt: PropTypes.string,
   domain: PropTypes.string,
   subject: PropTypes.string,
@@ -68,4 +68,4 @@ Jutsu.propTypes = {
   jitsiContainerStyles: PropTypes.object
 }
 
-export { Jutsu, useJitsi }
+export { Jitsi, useJitsi }

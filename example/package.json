@@ -1,6 +1,5 @@
 {
-  "name": "jutsu-example",
-  "homepage": "https://this-fifo.github.io/jutsu",
+  "name": "drepione-jitsi-example",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +8,7 @@
     "react": "link:../node_modules/react",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
-    "react-jutsu": "link:.."
+    "drepione-react-jitsi": "link:.."
   },
   "scripts": {
     "start": "react-scripts start",
