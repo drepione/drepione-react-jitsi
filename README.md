@@ -1,5 +1,7 @@
 # drepione-react-jitsi
-> A jitsi meet component wrapper and custom hook moulded with react's chakra 💠
+> This project is a fork of [jutsu](https://github.com/this-fifo/jutsu).
+> 
+>
 
 [![NPM](https://img.shields.io/npm/v/drepione-react-jitsi.svg)](https://www.npmjs.com/package/drepione-react-jutsu)
 
